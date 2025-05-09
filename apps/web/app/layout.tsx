@@ -7,7 +7,7 @@ import {getLocale} from 'next-intl/server';
 const geist = Geist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "NextFlix Web Application",
+  title: "NextFlix",
   description: "NextFlix Movie Online",
 };
 

@@ -1,0 +1,10 @@
+services:
+  - name: nextflix-web-app
+    type: web
+    env: docker
+    repo: https://github.com/KhunKomkrit/Nextflix-Web-Appliation.git
+    branch: develop
+    dockerfilePath: apps/web/Dockerfile
+    buildFilter:
+      paths:
+        - apps/web/**
