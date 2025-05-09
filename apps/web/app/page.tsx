@@ -3,6 +3,7 @@ import Image from "next/image";
 import Header from "./components/layouts/Header";
 import PlayButton from "./components/buttons/PlayButton";
 import MoreInfoButton from "./components/buttons/MoreInfoButton";
+import PopularScroller from "./components/scroller/PopularScroller";
 
 export default function HomePage() {
   const t = useTranslations("AppName");
@@ -54,6 +55,70 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <PopularScroller
+          movies={[
+            {
+              id: 1,
+              title: "Locke & Key",
+              image:
+                "https://image.tmdb.org/t/p/w500/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg",
+            },
+            {
+              id: 2,
+              title: "Jojo",
+              image:
+                "https://image.tmdb.org/t/p/original/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg",
+            },
+            {
+              id: 3,
+              title: "Jojo",
+              image:
+                "https://image.tmdb.org/t/p/original/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg",
+            },
+            {
+              id: 4,
+              title: "Jojo",
+              image:
+                "https://image.tmdb.org/t/p/original/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg",
+            },
+            {
+              id: 5,
+              title: "Jojo",
+              image:
+                "https://image.tmdb.org/t/p/original/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg",
+            },
+            {
+              id: 6,
+              title: "Jojo",
+              image:
+                "https://image.tmdb.org/t/p/original/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg",
+            },
+            {
+              id: 7,
+              title: "Jojo",
+              image:
+                "https://image.tmdb.org/t/p/original/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg",
+            },
+            {
+              id: 8,
+              title: "Jojo",
+              image:
+                "https://image.tmdb.org/t/p/original/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg",
+            },
+            {
+              id: 9,
+              title: "Jojo",
+              image:
+                "https://image.tmdb.org/t/p/original/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg",
+            },
+            {
+              id: 10,
+              title: "Jojo",
+              image:
+                "https://image.tmdb.org/t/p/original/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg",
+            },
+          ]}
+        />
     </main>
   );
 }

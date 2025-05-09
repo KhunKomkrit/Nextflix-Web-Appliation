@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  images: {
+    domains: ['image.tmdb.org'],
+  },
 };
 
 const withNextIntl = createNextIntlPlugin('./app/i18n/request.ts');
