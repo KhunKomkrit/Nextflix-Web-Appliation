@@ -10,7 +10,7 @@ type MovieCard = {
 };
 export default function PopularScroller({ movies }: { movies: MovieCard[] }) {
   return (
-    <section className="mt-2 mx-auto absolute w-full bottom-5 left-0 right-0 pl-7">
+    <section className="mt-2 mx-auto absolute w-full bottom-0 left-0 right-0 pl-7 pb-5">
       <h2 className="text-xl font-bold text-white mb-2">Popular on Nextflix</h2>
       <Swiper slidesPerView={"auto"} spaceBetween={10} grabCursor={true} className="w-full">
         {movies.map((movie) => (
