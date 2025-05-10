@@ -8,3 +8,14 @@ services:
     buildFilter:
       paths:
         - apps/web/**
+
+  - name: nextflix-api-app
+    type: api
+    env: docker
+    repo: https://github.com/KhunKomkrit/Nextflix-Web-Appliation.git
+    branch: develop
+    dockerfilePath: apps/api/Dockerfile
+    buildFilter:
+      paths:
+        - apps/api/**
+
