@@ -5,6 +5,7 @@ export function createSwaggerConfig(title = 'API') {
     .setTitle(title)
     .setDescription('Auto-generated Swagger docs')
     .setVersion('1.0')
+    .addBearerAuth()
     .build();
 }
 
@@ -17,6 +18,10 @@ export const swaggerOptions = {
         url: 'nextflix/json',
       },
     ],
+    tagsSorter: (a, b) => {
+      const order = ['Auth', 'Movie'];
+      return order.indexOf(a) - order.indexOf(b);
+    },
   },
   jsonDocumentUrl: 'nextflix/json',
 };

@@ -1,4 +1,4 @@
 export interface QueryParam {
-  language: string;
-  page: number;
+  language?: string;
+  page?: number;
 }

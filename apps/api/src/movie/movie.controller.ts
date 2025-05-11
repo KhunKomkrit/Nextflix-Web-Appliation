@@ -1,9 +1,18 @@
-import { Controller, Get, Query } from '@nestjs/common';
+import { Controller, Get, Query, UseGuards } from '@nestjs/common';
 import { MovieService } from './movie.service';
 import { QueryMovieDto } from './dto/query-movie.dto';
-import { ApiOkResponse } from '@nestjs/swagger';
+import {
+  ApiBearerAuth,
+  ApiOkResponse,
+  ApiUnauthorizedResponse,
+} from '@nestjs/swagger';
 import { ResponseMovieDto } from './dto/response-movie.dto';
+import { JwtAuthGuard } from 'src/auth/jwt/jwt.guard';
+import { ResponseUnauthorized } from 'src/auth/dto/response-unauthorized.dto';
 
+@ApiBearerAuth()
+@UseGuards(JwtAuthGuard)
+@ApiUnauthorizedResponse({ type: ResponseUnauthorized })
 @Controller('movie')
 export class MovieController {
   constructor(private readonly movieService: MovieService) {}
@@ -11,7 +20,7 @@ export class MovieController {
   @Get('popular')
   @ApiOkResponse({ type: ResponseMovieDto })
   findAll(@Query() queryParams: QueryMovieDto) {
-    return this.movieService.findAll();
+    return this.movieService.findAll(queryParams);
   }
 
   // @Get('/popular/:id')
