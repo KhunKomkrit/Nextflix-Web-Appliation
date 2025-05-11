@@ -1,0 +1,1 @@
+export * from './types/movie/response-popular.interface';
