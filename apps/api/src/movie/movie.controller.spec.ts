@@ -64,7 +64,7 @@ describe('MovieController', () => {
     it('should return popular movies', async () => {
       mockMovieService.findAll.mockResolvedValue(mockPopularMovies);
 
-      const result = await controller.findAll();
+      const result = await controller.findAll({});
       expect(result).toEqual(mockPopularMovies);
       expect(movieService.findAll).toHaveBeenCalled();
     });
@@ -73,7 +73,7 @@ describe('MovieController', () => {
       const error = new Error('Failed to fetch movies');
       mockMovieService.findAll.mockRejectedValue(error);
 
-      await expect(controller.findAll()).rejects.toThrow(
+      await expect(controller.findAll({})).rejects.toThrow(
         'Failed to fetch movies',
       );
       expect(movieService.findAll).toHaveBeenCalled();
