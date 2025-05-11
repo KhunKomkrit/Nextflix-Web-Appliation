@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 import { MovieService } from './movie.service';
 
 @Controller('movie')
@@ -10,8 +10,8 @@ export class MovieController {
     return this.movieService.findAll();
   }
 
-  @Get('/popular/:id')
-  findOne(@Param('id') id: string) {
-    return this.movieService.findOne(+id);
-  }
+  // @Get('/popular/:id')
+  // async findOne(@Param('id') id: string) {
+  //   return await this.movieService.findOne(+id);
+  // }
 }
