@@ -10,10 +10,10 @@ export const axiosClient = axios.create({
 
 axiosClient.interceptors.request.use(async (config) => {
   let token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
-
-  if (!token) {
+  let isLoggingIn = false;
+  if (!token && !isLoggingIn) {
     try {
-      const res = await axiosClient.post('/auth/login',
+      const res = await axios.post(`${API_BASE_URL}/auth/login`,
         {
           email: process.env.AUTH_EMAIL,
           password: process.env.AUTH_PASS,
@@ -23,6 +23,8 @@ axiosClient.interceptors.request.use(async (config) => {
       localStorage.setItem('token', token);
     } catch (error) {
       console.error('Auto-login failed', error);
+    } finally {
+      isLoggingIn = false;
     }
   }
 
