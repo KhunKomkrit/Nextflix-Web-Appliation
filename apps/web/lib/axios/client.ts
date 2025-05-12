@@ -1,7 +1,8 @@
 import axios from 'axios';
+import { API_BASE_URL, AUTH_EMAIL, AUTH_PASS } from '@lib/config';
 
 export const axiosClient = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL || 'https://nextflix-api-appliation.onrender.com',
+  baseURL: API_BASE_URL || 'https://nextflix-api-appliation.onrender.com',
   headers: {
     'Content-Type': 'application/json',
   },
@@ -13,10 +14,10 @@ axiosClient.interceptors.request.use(async (config) => {
   if (!token) {
     try {
       const res = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/auth/login`,
+        `${API_BASE_URL}/auth/login`,
         {
-          email: process.env.NEXT_PUBLIC_AUTH_EMAIL,
-          password: process.env.NEXT_PUBLIC_AUTH_PASS,
+          email: AUTH_EMAIL,
+          password: AUTH_PASS,
         }
       );
       token = res.data.access_token as string;
