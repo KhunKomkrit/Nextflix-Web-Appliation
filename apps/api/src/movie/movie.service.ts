@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { TmdbService } from '../tmdb/tmdb.service';
 import { QueryMovieDto } from './dto/query-movie.dto';
-import { QueryParam } from 'src/tmdb/interfaces/query-param/query-param.interface';
 
 @Injectable()
 export class MovieService {

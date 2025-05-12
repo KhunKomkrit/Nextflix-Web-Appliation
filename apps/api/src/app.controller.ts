@@ -13,4 +13,9 @@ export class AppController {
     res.setHeader('Content-Type', 'text/html');
     res.send(this.appService.getHomePage());
   }
+
+  @Get('/ping')
+  getPing() {
+    return { status: 'ok', timestamp: Date.now() };
+  }
 }
