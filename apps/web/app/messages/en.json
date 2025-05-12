@@ -1,5 +1,19 @@
 {
-"AppName": {
+  "AppName": {
     "title": "NextFlix Movie Online"
-  }
+  },
+  "MenuBar": {
+    "Home": "Home",
+    "Movies": "Movies",
+    "TV": "TV Shows"
+  },
+  "TitleTopRanking": {
+    "top10Movie": "#1 in Movie Show Today"
+  },
+  "Play": "Play",
+  "MoreInfo": "More Info",
+  "Info": "Info",
+  "PopularOnNextFlix": "Popular on Nextflix",
+  "Loadding": "Loadding",
+  "Error": "Error"
 }

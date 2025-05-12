@@ -1,5 +1,19 @@
 {
- "AppName": {
+  "AppName": {
     "title": "NextFlix"
-  }
-    }
+  },
+  "MenuBar": {
+    "Home": "หน้าหลัก",
+    "Movies": "หนัง",
+    "TV": "ทีวี โชว์"
+  },
+  "TitleTopRanking": {
+    "top10Movie": "#1 ของหนัง ในวันนี้"
+  },
+  "Play": "เล่น",
+  "MoreInfo": "ข้อมูลเพิ่มเติม",
+  "Info": "ข้อมูล",
+  "PopularOnNextFlix": "ได้รับความนิยมบน Nextflix",
+  "Loadding": "กำลังโหลด",
+  "Error": "เกิดข้อผิดพลาด"
+}

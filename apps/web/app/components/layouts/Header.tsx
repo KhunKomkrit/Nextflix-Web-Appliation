@@ -1,9 +1,10 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
+import LanguageSwitcher from "../selects/LanguageSwitcher";
 
 export default function Header() {
-  const t = useTranslations("AppName");
+  const t = useTranslations("MenuBar");
   return (
     <header className="absolute top-0 left-0 right-0 z-50 w-full">
       <div className="flex justify-between items-center px-6 py-4 ">
@@ -18,13 +19,13 @@ export default function Header() {
           <nav>
             <ul className="flex gap-4">
               <li>
-                <Link href="#"  className="hover:underline">
-                  Home
+                <Link href="#" className="hover:underline">
+                  {t("Home")}
                 </Link>
               </li>
               <li>
                 <Link href="#" className="hover:underline">
-                  Movies
+                  {t("Movies")}
                 </Link>
               </li>
               {/* <li>
@@ -48,19 +49,7 @@ export default function Header() {
         <nav>
           <ul className="flex gap-4">
             <li>
-              <Link href="#" className="hover:underline">
-                XXXXX
-              </Link>
-            </li>
-            <li>
-              <Link href="#" className="hover:underline">
-                XXXXX
-              </Link>
-            </li>
-            <li>
-              <Link href="#" className="hover:underline">
-                XXXXX
-              </Link>
+              <LanguageSwitcher />
             </li>
           </ul>
         </nav>
