@@ -13,6 +13,11 @@ async function bootstrap() {
     swaggerOptions,
   );
 
+  app.enableCors({
+    origin: process.env.ENABLE_CORS?.split(','),
+    credentials: true,
+  });
+
   const port = process.env.PORT || 3000;
   await app.listen(port);
   console.log(`🚀 App listening on port ${port}`);

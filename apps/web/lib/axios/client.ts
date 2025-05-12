@@ -1,0 +1,34 @@
+import axios from 'axios';
+
+export const axiosClient = axios.create({
+  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL || 'https://nextflix-api-appliation.onrender.com',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+axiosClient.interceptors.request.use(async (config) => {
+  let token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
+
+  if (!token) {
+    try {
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/auth/login`,
+        {
+          email: process.env.NEXT_PUBLIC_AUTH_EMAIL,
+          password: process.env.NEXT_PUBLIC_AUTH_PASS,
+        }
+      );
+      token = res.data.access_token as string;
+      localStorage.setItem('token', token);
+    } catch (error) {
+      console.error('Auto-login failed', error);
+    }
+  }
+
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  
+  return config;
+});

@@ -5,7 +5,12 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "paths": {
+      "@nextflix/shared/*": ["../../packages/shared/*"],
+      "@lib/*": ["./lib/*"],
+      "@hooks/*": ["./hooks/*"]
+    }
   },
   "include": [
     "**/*.ts",

@@ -7,7 +7,7 @@ type HeroProps = {
     title: string;
     overview: string;
     bgImage: string;
-    topRankink?: React.ReactNode
+    topRanking?: React.ReactNode
 }
 
 export default function HeroSection(props: HeroProps) {
@@ -23,7 +23,7 @@ export default function HeroSection(props: HeroProps) {
           <h1 className="text-[4rem] font-extrabold leading-none tracking-tight uppercase drop-shadow-xl">
             {props.title}
           </h1>
-         {props.topRankink}
+         {props.topRanking}
           <article>
             <p className="mt-2 max-w-md text-sm  text-shadow-lg ">
              {props.overview}

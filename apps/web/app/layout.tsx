@@ -2,7 +2,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { Geist } from "next/font/google";
-import {getLocale} from 'next-intl/server';
+import { getLocale } from "next-intl/server";
+import ReactQueryProvider from "@lib/react-query/provider";
 
 const geist = Geist({ subsets: ["latin"] });
 
@@ -17,10 +18,13 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const locale = await getLocale();
+
   return (
     <html lang={locale}>
       <body className={geist.className}>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <ReactQueryProvider>
+          <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        </ReactQueryProvider>
       </body>
     </html>
   );

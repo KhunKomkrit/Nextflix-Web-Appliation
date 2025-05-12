@@ -24,15 +24,10 @@ export default function Header() {
               </li>
               <li>
                 <Link href="#" className="hover:underline">
-                  TV Shows
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:underline">
                   Movies
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="#" className="hover:underline">
                   New & Popular
                 </Link>
@@ -46,7 +41,7 @@ export default function Header() {
                 <Link href="#" className="hover:underline">
                   Browse By Languages 
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </nav>
         </div>
